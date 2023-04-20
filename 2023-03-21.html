@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <input type="button" value="공지창 열기" onclick="window.open('/img/dgsw.jpeg')">
+        <br />
+        <fieldset>
+            <input type="file">
+        </fieldset>
+        <br />
+        <input type="hidden" value="사이트를 통한 직접 로그인">
+        <label>아이디: <input type="text" id="user_id" size="10" required></label>
+        <label>비밀번호: <input type="password" id="user_pw" size="10" required></label>
+        <input type="submit" value="로그인">
+        <br/>
+        <label for="user_name">이름</label>
+        <input type="text" id="user_name" autofocus>
+        <br/>
+        <label for="phone_number">연락처</label>
+        <input type="tel" id="phone_number" placeholder="띄어쓰기 없이 입력해주세요.">
+        <br/>
+        <select size="10" multiple>
+            <option value="값1">내용1</option>
+            <option value="값2">내용2</option>
+            <option value="값3">내용3</option>
+            <option value="값4">내용4</option>
+            <option value="값5">내용5</option>
+            <option value="값6">내용6</option>
+            <option value="값7">내용7</option>
+        </select>
+    </form>
+</body>
+
+</html>
