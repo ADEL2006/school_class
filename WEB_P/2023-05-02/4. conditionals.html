@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>조건문</title>
+  </head>
+  <body>
+    <script>
+      var userNumber = prompt("숫자를 입력하세요.");
+
+      //===========================================================
+      // 다 알고 있는 if문이다.
+      if (userNumber !== null) {
+        if (userNumber % 3 === 0) alert("3의 배수입니다.");
+        else alert("3의 배수가 아닙니다.");
+      } else alert("입력이 취소됐습니다.");
+
+      // 위의 if문을 삼항 연산자를 이용하면 코드가 간결해진다. 삼항연산자는 중첩해서 사용하면 코드 가독성이 떨어진다.
+      if (userNumber !== null)
+        userNumber % 3 === 0
+          ? alert("3의 배수입니다.")
+          : alert("3의 배수가 아닙니다.");
+      else alert("입력이 취소됐습니다.");
+      //===========================================================
+
+      //===========================================================
+      // 위와 비슷한 예제
+      var a = 5;
+      var b;
+      if (a === 5) {
+        b = 3;
+      } else {
+        b = 2;
+      }
+
+      // 위의 if 문을 간략히
+      // 콘솔에서 직접 입력해 결과 확인
+      var a = 5;
+      var b = a === 5 ? 3 : 2;
+      //===========================================================
+
+      /*===========================================================
+      if 문을 간략히 쓰는 방법들
+      */
+      const a = 1;
+      const b = 1;
+      let isTrue = false;
+
+      if (a === b) {
+        isTrue = true;
+      }
+
+      // 위의 if 문을 간략히 쓰면
+      const a1 = 1;
+      const b1 = 1;
+      const isTrue1 = a1 === b1;
+
+      // 흔히 사용할법한 예
+      if (isLogin) {
+        goToHomepage();
+      }
+
+      // 위의 if 문을 간략히 쓰면
+      isLogin && goToHomepage();
+
+      // 또 다른 예제. if에 조건이 아주 여러개 있을때 유용하게 사용
+      if (value === 1 || value === "one" || value === 2 || value === "two") {
+        // 어쩌고 저쩌고 코드....
+      }
+
+      // 간략히
+      if ([1, "one", 2, "two"].indexOf(value) >= 0) {
+        // 뒤에 배별 객체에서 다룰 내용임.
+        // 어쩌고 저쩌고 코드....
+      }
+      // 더 간략히
+      if ([1, "one", 2, "two"].includes(value)) {
+        // 뒤에 배별 객체에서 다룰 내용임.
+        // // 어쩌고 저쩌고 코드....
+      }
+    </script>
+  </body>
+</html>
