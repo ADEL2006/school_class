@@ -100,12 +100,12 @@
         `객체에서 값 가져온다 name = ${a.name} email = ${a.email} phone = ${a.phone} main_card = ${a.card.main_card} height = ${a.height}`
       );
 
-      // a = { ...a, addVal: "새로 추가한 값" }; // 배열에도 똑같이 적용됨. 리액트할때 많이 사용됨
+      a = { ...a, addVal: "새로 추가한 값" }; // 배열에도 똑같이 적용됨. 리액트할때 많이 사용됨
 
       // 새로운 값이 추가 되었다.
-      // console.log(
-      //   `객체에서 값 가져온다 name = ${a.name} email = ${a.email} phone = ${a.phone} main_card = ${a.card.main_card} height = ${a.height} addVal = ${a.addVal}`
-      // );
+      console.log(
+        `객체에서 값 가져온다 name = ${a.name} email = ${a.email} phone = ${a.phone} main_card = ${a.card.main_card} height = ${a.height} addVal = ${a.addVal}`
+      );
 
       var { name, email, phone, addVal, card } = a; // destructuring assignment (직역: 구조분해 할당) 비구조화 할당, 분할 대입 으로 번역. 리액트할때 많이 사용됨
       console.log(
