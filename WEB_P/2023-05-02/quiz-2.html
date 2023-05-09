@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>연습문제 2</title>
-    <style>
-      body {
-        font-size: 1.2em;
-        text-align: center;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>연습문제 2</title>
+  <style>
+    body {
+      font-size: 1.2em;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>3의 배수 찾기</h2>
+  <script>
+    /*
+    1. 프롬프트로 숫자입력받기
+    2. 취소 버튼 누르면 결과 안보여준다.
+    3. 입력받은 숫자를 3로 나눈 나머지가 0이면 3의 배수이고 아니면 3의 배수가 아니다.
+    4. 카운터 개수를 함께 표시해야한다.
+    */
+    var num = parseInt(prompt("몇까지 3의 배수를 찾을까요?"));
+    var cnt = 0;
+    for (var i = 1; i <= num; i++) {
+      if (i % 3 == 0) {
+        document.write(i+", ");
+        cnt++;
       }
-    </style>
-  </head>
-  <body>
-    <h2>3의 배수 찾기</h2>
-    <script>
-      /*
-	1. 프롬프트로 숫자입력받기
-	2. 취소 버튼 누르면 결과 안보여준다.
-	3. 입력받은 숫자를 3로 나눈 나머지가 0이면 3의 배수이고 아니면 3의 배수가 아니다.
-	4. 카운터 개수를 함께 표시해야한다.
-	*/
-    </script>
-  </body>
+    }
+    document.write("<br><br>"+num+"까지의 3의 갯수: "+cnt);
+  </script>
+</body>
+
 </html>
