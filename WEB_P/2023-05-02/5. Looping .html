@@ -15,57 +15,57 @@
       var arr = [10, 20, 30, 40];
 
       // 일반 for loop
-      // for (var i = 0; i < arr.length; i++) {
-      //   console.log(arr[i]);
-      // }
+      for (var i = 0; i < arr.length; i++) {
+        console.log(arr[i]);
+      }
 
       //for of loop (보통 배열에 사용)
-      // for (var val of arr) {
-      //   console.log(val);
-      // }
-      // console.log(`=============================================================`);
+      for (var val of arr) {
+        console.log(val);
+      }
+      console.log(`=============================================================`);
 
       //for in loop (보통 객체에 사용. 배열에도 사용할 수 있긴하다. 하지만 굳이...)
-      // for (var index in arr) {
-      //   console.log(`index: ${index} and value: ${arr[index]}`);
-      // }
-      // console.log(`=============================================================`);
+      for (var index in arr) {
+        console.log(`index: ${index} and value: ${arr[index]}`);
+      }
+      console.log(`=============================================================`);
 
       //for in loop (보통 객체에 사용)
-      // var obj = { x: 20, y: 50 };
-      // for (const key in obj) {
-      //   console.log(obj[key]);
-      // }
-      // console.log(`=============================================================`);
+      var obj = { x: 20, y: 50 };
+      for (const key in obj) {
+        console.log(obj[key]);
+      }
+      console.log(`=============================================================`);
 
       // 객체에서 키값도 같이 가져올땐
-      // Object.keys(obj).forEach((key, value) => {
-      //   console.log(`key : ${key} ||||| value : ${value}`);
-      // });
-      // console.log(`=============================================================`);
+      Object.keys(obj).forEach((key, value) => {
+        console.log(`key : ${key} ||||| value : ${value}`);
+      });
+      console.log(`=============================================================`);
 
       // reduce 사용한 반복문 처리
-      // var values = [1, 2, 3, 4, 5];
-      // var total = 0;
-      // for (var i = 0; i < values.length; i++) {
-      //   total += values[i];
-      // }
-      // console.log(`일반 for loop 반복문 결과 : ${total}`);
-      // console.log(`=============================================================`);
+      var values = [1, 2, 3, 4, 5];
+      var total = 0;
+      for (var i = 0; i < values.length; i++) {
+        total += values[i];
+      }
+      console.log(`일반 for loop 반복문 결과 : ${total}`);
+      console.log(`=============================================================`);
 
-      // var values = [1, 2, 3, 4, 5];
-      // var total = 0;
-      // values.forEach((n) => {
-      //   total += n;
-      // });
-      // console.log(`forEach로 반복문 결과 : ${total}`);
-      // console.log(`=============================================================`);
+      var values = [1, 2, 3, 4, 5];
+      var total = 0;
+      values.forEach((n) => {
+        total += n;
+      });
+      console.log(`forEach로 반복문 결과 : ${total}`);
+      console.log(`=============================================================`);
 
       // reduce 활용. 리액트 등에서 많이 활용
-      // var values = [1, 2, 3, 4, 5];
-      // var total = values.reduce((total, num) => total + num);
-      // console.log(`reduce로 반복문 결과 : ${total}`);
-      // console.log(`=============================================================`);
+      var values = [1, 2, 3, 4, 5];
+      var total = values.reduce((total, num) => total + num);
+      console.log(`reduce로 반복문 결과 : ${total}`);
+      console.log(`=============================================================`);
     </script>
   </body>
 </html>
