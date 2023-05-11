@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자바스크립트 이벤트</title>
+    <link rel="stylesheet" href="css/function.css" />
+  </head>
+  <body>
+    <button id="change">글자색 바꾸기</button>
+    <p>
+      Reprehenderit tempor do quis sunt eu et exercitation deserunt. Laboris
+      adipisicing est sint aliquip nulla pariatur velit irure elit qui id.
+      Dolore aliquip dolore eu ut irure sint Lorem reprehenderit velit. Duis
+      veniam irure cillum anim excepteur culpa pariatur sunt esse. Eu nulla
+      commodo velit ex id dolore incididunt mollit incididunt nisi labore culpa
+      qui ea. Commodo veniam veniam in ipsum ad minim occaecat qui pariatur
+      adipisicing laborum quis.
+    </p>
+
+    <script>
+      // 방법 1 : 웹 요소를 변수로 지정 & 미리 만든 함수 사용
+      const changeBttn = document.querySelector("#change");
+      changeBttn.onclick = changeColor;
+
+      function changeColor() {
+        document.querySelector("p").style.color = "#f00";
+      }
+
+      // 방법 2 : 웹 요소를 따로 변수로 만들지 않고 사용
+      // document.querySelector("#change").onclick = changeColor;
+
+      // function changeColor() {
+      //   document.querySelector("p").style.color = "#f00";
+      // }
+
+      //방법 3 : 직접 함수를 선언
+      // document.querySelector("#change").onclick = function () {
+      //   document.querySelector("p").style.color = "#f00";
+      // };
+
+      //방법 4 : 직접 함수를 선언 화살표 함수로
+      document.querySelector("#change").onclick = () => {
+        document.querySelector("p").style.color = "#f00";
+      };
+
+      // 한번 더 클릭 하면 검은색으로 다시 바꿔주는 기능은 넣어보세요~
+      // 이 함수에서 코드를 추가해보세요~
+      // let toggle = true;
+      // document.querySelector("#change").onclick = () => {
+      //   let pTag = document.querySelector("p");
+
+      //   if (toggle) {
+      //     pTag.style.color = "#f00";
+      //     toggle = false;
+      //     console.log(`현재 toggle 값 : ${toggle}`);
+      //   } else {
+      //     pTag.style.color = "black";
+      //     toggle = true;
+      //     console.log(`현재 toggle 값 : ${toggle}`);
+      //   }
+      // };
+
+      // document.querySelector("#change").onclick = () => {
+      //   let pTag = document.querySelector("p");
+      //   let currentColor = pTag.style.color;
+
+      //   if (currentColor === "black" || currentColor === "") {
+      //     pTag.style.color = "#f00";
+      //   } else {
+      //     pTag.style.color = "black";
+      //   }
+      // };
+
+      document.querySelector("#change").onclick = () => {
+        let pTag = document.querySelector("p");
+        pTag.style.color =
+          pTag.style.color === "black" || pTag.style.color === ""
+            ? "#f00"
+            : "black";
+      };
+    </script>
+  </body>
+</html>

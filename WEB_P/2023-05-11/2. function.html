@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function - Variable</title>
+  </head>
+  <body>
+    <script>
+      /*
+      화살표 함수는 리액트 등 front에선 기본이고 모던 자바스크립트에선 기본이기에 아주 중요함!!!
+      현재 prettier 설정에서 파라미터 한개일때 ( ) 생략 부분을 저장 시 자동 포맷팅을 해 ( )를 생성시켜줘버린다.
+      */
+      // 기본사용법 1. 앞으론 화살표 함수로...
+      const fn_old = function () {
+        // 어쩌고 저쩌고...
+      };
+      const fn_arrow = () => {};
+
+      // 기본사용법 2. 파라미터 1개 있을때는 ( ) 생략 가능
+      const fn_arrow2 = (user) => {};
+      const fn_arrow3 = (user) => {};
+
+      // 기본사용법 3. 파라미터 2개 이상 있을때는 ( ) 생략 안됨!!
+      const fn_arrow4 = (user, info) => {};
+
+      // 기본사용법 4. 함수 본체에 return 구문만 있으면 return 구문과 { } 생략 가능
+      const fn_arrow5 = (user) => {
+        return user.name;
+      };
+      // 파라미터도 한개고 return 구문만 함수 본체에 있기에 ( ) , return, { }생략 가능
+      // 아래같은 함수 표현식을 앞으로 자주보고 리액트에서도 자주 볼것임!!!!
+      const fn_arrow6 = (user) => user.name;
+
+      // 기본사용법 5. 당연히 함수 본체가 길어지면..
+      const fn_arrow7 = (user) => {
+        // 어쩌고 저쩌고....
+        // 어쩌고 저쩌고....
+        // 어쩌고 저쩌고....
+        // 어쩌고 저쩌고....
+        return user;
+      };
+
+      /*
+      아래에 나오는 부분들은 지금 당장은 몰라도 되지만 리액트 등 front를 다룬다면 꼭 알아놔야 하는 부분들임!!
+      해당 내용들을 잊을만하면 보고 또 보고 눈에 익혀 놓으면 3학년이 편해질것임.
+      */
+      // 객체에 함수 선언 시
+      /* Bad */
+      const customObject1 = {
+        val: 1,
+        addVal: function () {
+          return customObject.val + 1;
+        },
+      };
+      /* Good 리액트에서 자주보게될 방법 */
+      const customObject2 = {
+        val: 1,
+        addVal() {
+          return customObject.val++;
+        },
+      };
+
+      // 함수 파라미터에서 분할 대입
+      const client = {
+        name: "정진우",
+        email: "hanize@dgsw.hs.kr",
+      };
+
+      /* Bad */
+      function getFullName(client) {
+        return `${client.name} ${client.email}`;
+      }
+      /* Good 리액트에서 자주보게될 방법 */
+      function getFullName({ name, email }) {
+        return `${name} ${email}`;
+      }
+
+      // 파라미터 기본값 설정
+      /* Bad */
+      const myFunct1 = (a, b) => {
+        if (!a) a = 1;
+        if (!b) b = 1;
+        return { a, b };
+      };
+      /* Good */
+      const myFunct2 = (a = 1, b = 1) => {
+        return { a, b };
+      };
+
+      // 바로 위의 예제에 더해 하나만 더~
+      // productName 변수에 값이 들어있는지를 체크하는 코드. JS에선 아래처럼 3가지 조건을 체크해줘야 확실히 값이 들어있는지 알 수 있다.
+      // 1. productName이 undefined
+      // 2. productName이 null
+      // 3. productName이 빈문자열
+      // 하지만 이걸 좀 더 간단하게 아래처럼 한줄로 표현할 수 있다.
+      /* Bad */
+      var productName = 0;
+      if (
+        productName !== undefined &&
+        productName !== "" &&
+        productName !== null
+      ) {
+        console.log(`productName 값이 들어 있음 :  ${productName} `);
+      }
+      /* Good */
+      if (productName) {
+        console.log(`productName 값이 들어 있음 :  ${productName} `);
+      }
+    </script>
+  </body>
+</html>
