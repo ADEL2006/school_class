@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+    <style>
+      body {
+        font-size: 2em;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      /*
+      Math 객체
+      보통 random(), round(), ceil(), floor() 정도만 주로 사용
+      Math 객체는 JAVA처럼 인스턴스 생성 하지않고 사용가능 (정적)
+      */
+
+      // 0~1 사이에서 무작위 숫자 출력
+      console.log(Math.random());
+
+      // 1~100까지 무작위 숫자 출력
+      // X100 만 하면 0~99.999... 사이의 값이라 +1 해준다
+      console.log(Math.random() * 100 + 1);
+
+      // 소수점 이하는 버리고 출력
+      // floor()는 소수점이하 버림 method이다.
+      console.log(Math.floor(Math.random() * 100 + 1));
+    </script>
+  </body>
+</html>
