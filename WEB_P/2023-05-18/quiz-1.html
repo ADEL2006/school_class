@@ -25,7 +25,23 @@
     function att(arr1, arr2, arr3) {
       console.log(arr1+arr2+arr3);
     }
-
+    const quizArr = [
+        "아이폰",
+        "갤럭시",
+        "아이폰",
+        "갤럭시",
+        "갤럭시",
+        "아이폰",
+        "샤오미",
+        "LG",
+        "샤오미",
+      ];
+      var arr2 = [], cnt = 0;
+      for (var i = 0; i < quizArr.length; i++) {
+        if (quizArr[i] == "아이폰") {
+          arr2[cnt++] = quizArr[i];
+        }
+      }
   </script>
 </body>
 </html>
