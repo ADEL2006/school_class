@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM event 객체</title>
+    <style>
+      #container {
+        width: 300px;
+        margin: 10px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <img src="images/cup-1.png" id="cup" />
+      <p><a id="naver" href="https://naver.com" target="_blank">네이버</a></p>
+    </div>
+
+    <script>
+      const cup = document.querySelector("#cup"); // id = cup인 요소를 가져옴
+      cup.onclick = function (event) {
+        alert(
+          "이벤트 유형: " +
+            event.type +
+            ", 이벤트 발생 위치 : " +
+            event.pageX +
+            "," +
+            event.pageY
+        );
+      };
+
+      // preventDefault() 활용
+      const naver = document.querySelector("#naver");
+      naver.onclick = function (e) {
+        console.log("naver로 바로 이동됨");
+
+        // e.preventDefault();
+        // console.log("naver로 이동안됨");
+      };
+    </script>
+  </body>
+</html>
