@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>당첨자 발표</h1>
+    <script>
+        const num = prompt("전체 응모자수를 입력해주세요.", "응모자수");
+        document.write("전체 응모자수: "+num+"<br/>");
+        document.write("당점자: "+Math.floor(Math.random()*num));
+    </script>
+</body>
+</html>
