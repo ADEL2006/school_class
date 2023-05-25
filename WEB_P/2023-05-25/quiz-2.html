@@ -6,6 +6,29 @@
 	<title>연습문제 2</title>
 </head>
 <body>
-	
+	<p id="apple">사과</p>
+	<p id="grape">포도</p>
+
+	<input type="button" id="btn1" onclick="addApple()" value="사과">
+	<input type="button" id="btn2" onclick="addGrape()" value="포도">
+	<p id="fruit">결과출력: </p>
+	<script>
+		const fapple = document.querySelector("#apple");
+		const fgrape = document.querySelector("#grape");
+		const fruit = document.querySelector("#fruit");
+
+		const apple = document.querySelector("#btn1");
+		const grape = document.querySelector("#btn2");
+
+		function addApple() {
+			fruit.innerHTML += fapple.innerHTML;
+		}
+		function addGrape() {
+			fruit.innerHTML += fgrape.innerHTML;
+		}
+		
+		apple.addEventListener("click", addApple());
+		grape.addEventListener("click", addGrape());
+	</script>
 </body>
 </html>
