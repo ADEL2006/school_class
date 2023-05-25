@@ -1,19 +1,16 @@
 /* 조건 1번 */
 /* 전체 선택자를 이용하여 스타일 적용 */
-(
-
-
-
-)
+*{
+	margin: 0;
+	padding: 0;
+}
 
 /* 조건 2번 */
 /* body 태그에 스타일 적용 */
-(
-
-
-
-)
-
+body{
+	background-color: gray;
+	padding: 20px;
+}
 #signup {
 	background:#fff;
 	border:1px solid #222;
@@ -65,13 +62,13 @@
 
 /* 조건 3번 */
 /* 조건 3을 만족하도록 괄호를 채우세요. */
-(           ) {	
-	(			); /* 조건 3번 */
-	(			); /* 조건 3번 */
+#signup button {
+	border: 1px solid black; /* 조건 3번 */
+	border-radius: 20px; /* 조건 3번 */
 	display: block;
-	(			); /* 조건 3번 */
+	font-size: 16px; /* 조건 3번 */
 	letter-spacing: 1px;
-	(			); /* 조건 3번 */
+	margin: auto; /* 조건 3번 */
 	padding: 7px 25px;
 }
 
@@ -85,15 +82,15 @@
 
 /* 조건 4번 */
 /* 조건 4를 만족하도록 괄호를 채우세요. */
-#signup (           ){  /* input 요소에 checked 속성이 추가되었을 때 label 요소의 스타일 */
-	(           );  /* 조건 4번 */
-	(           );  /* 조건 4번 */
+#signup input:checked + label{  /* input 요소에 checked 속성이 추가되었을 때 label 요소의 스타일 */
+	color: red;  /* 조건 4번 */
+	font-weight: bold;  /* 조건 4번 */
 }
 
 /* 조건 5번 */
 /* 조건 5를 만족하도록 괄호를 채우세요. */
-#signup (           ) {  /* 필수 입력 필드의 스타일 */
-	(               );
+#signup input:required {  /* 필수 입력 필드의 스타일 */
+	border: 1px solid red;
 }
 
 #signup input[readonly] {  /* 읽기 전용 필드의 스타일 */
@@ -102,7 +99,7 @@
 
 /* 조건 6번 */
 /* 조건 6를 만족하도록 괄호를 채우세요. */
-#signup (           ) {  /* #singup 하위에 있는 버튼에 마우스 올렸을 때 스타일 */
-    (             );
-    (             );
+#signup button:hover {  /* #singup 하위에 있는 버튼에 마우스 올렸을 때 스타일 */
+    background-color: black;
+    color: white;
 }
