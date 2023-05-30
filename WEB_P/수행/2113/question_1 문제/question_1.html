@@ -65,8 +65,9 @@
       var userLevel = document.querySelector('input[name="level"]:checked').value;
       var fullName = document.getElementById("fullname").value;
       var email = document.getElementById("email").value;
-      
-      var message = "입력 받은 값" + "\n";
+
+      var message;
+      message = "입력 받은 값" + "\n";
       message += "================================" + "\n"
       message += "아이디: " + userId + "\n";
       message += "회원 등급: " + userLevel + "\n";
