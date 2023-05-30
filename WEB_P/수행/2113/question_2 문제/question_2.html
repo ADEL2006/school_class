@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자바스크립트 이벤트</title>
+    <link rel="stylesheet" href="question_2.css" />
+  </head>
+  <body>
+    <button id="change" onclick="change()">내용 바꾸기</button>
+    <p id="p_1">첫번째 문단입니다.</p>
+    <p id="p_2">두번째 문단입니다.</p>
+
+    <script>
+
+      var p1 = document.getElementById("p_1");
+      var p2 = document.getElementById("p_2");
+      var temp;
+      var cnt = 0;
+
+      var change = () => {
+        if (cnt % 2 == 0) {
+          temp = p1.innerHTML;
+          p1.innerHTML = p2.innerHTML;
+          p2.innerHTML = temp;
+          p1.style.color = "red";
+          p2.style.color = "blue";
+        }else {
+          temp = p1.innerHTML;
+          p1.innerHTML = p2.innerHTML;
+          p2.innerHTML = temp;
+          p1.style.color = "black";
+          p2.style.color = "black";
+        }
+        cnt++;
+      };
+      /*
+      문제 1) 내용 바꾸기 버튼 클릭 시 실행 영상처럼 p tag의 내용이 서로 바뀌도록 코드를 작성하세요.
+            주의! HTML은 절대 수정할 수 없습니다.
+
+      조건1) 내용 바꾸기 버튼은 토글 버튼으로 동작시키세요.
+      조건2) addEventListener의 실행 함수는 화살표 함수 문법으로 작성하세요.
+      조건3) 버튼 클릭 시 첫번째 p tag의 글자색은 red, 두번째 p tag의 글자색은 blue로 변경시키세요.
+      */
+    </script>
+  </body>
+</html>

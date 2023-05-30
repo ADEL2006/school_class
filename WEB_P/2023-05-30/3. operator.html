@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>연산자</title>
+  </head>
+  <body>
+    <script>
+      /*==================================================================================
+      || OR 연산자
+      리액트(모던 자바스크립트)에서 아주 요긴하게 사용
+      */
+      // 쉽게 설명해 A || B 라는 조건에서 A값이 falsy 값이면 B 값이 나온다.
+      // 보통 초기값 설정할 때 많이 사용.
+      // basketCount || 0 ===> basketCount 값이 null, 0 등의 값이면 초기값으로 0으로 셋팅한다.
+      // 그럼 falsy 값이란? false, null, NaN, 0, 빈 문자열 ("" or '' or ``), undefined 이다!
+      // console.log(`OR 연산자 예 1 : ${10 || "왜 이 문자가 나왔는지??"}`);
+      // console.log(`OR 연산자 예 2 : ${0 || "왜 이 문자가 나왔는지??"}`);
+      // console.log(`OR 연산자 예 2 : ${null || "왜 이 문자가 나왔는지??"}`);
+      // console.log(`OR 연산자 예 2 : ${"" || "왜 이 문자가 나왔는지??"}`);
+      // console.log(`OR 연산자 예 2 : ${null || "왜 이 문자가 나왔는지??"}`);
+      // console.log(`OR 연산자 예 2 : ${"falsy" || "왜 이 문자가 나왔는지??"}`);
+
+      // 예제
+      // var imagePath;
+      // var path = getImagePath();
+      // if (path !== null && path !== undefined && path !== "") {
+      //   imagePath = path;
+      // } else {
+      //   imagePath = "default.jpg";
+      // }
+
+      // 이렇게 짤게 쓴다
+      // var imagePath = getImagePath() || "default.jpg";
+      // console.log(`==================================================================`);
+
+      /*
+      && AND 연산자
+      리액트(모던 자바스크립트)등 에서 아주 요긴하게 사용
+      */
+      // 쉽게 설명해 A || B 라는 조건에서 A값이 truthy 값이면 B 값이 나온다.
+      // 그럼 truthy 값이란? falsy값이 아닌 모든 값이다!
+      // console.log(`AND 연산자 예 1 : ${10 && "왜 이 문자가 나왔는지??"}`);
+      // console.log(`AND 연산자 예 2 : ${0 && "왜 이 문자가 나왔는지??"}`);
+      // console.log(`AND 연산자 예 2 : ${null && "왜 이 문자가 나왔는지??"}`);
+      // console.log(`AND 연산자 예 2 : ${"" && "왜 이 문자가 나왔는지??"}`);
+      // console.log(`AND 연산자 예 2 : ${"truthy" && "왜 이 문자가 나왔는지??"}`);
+      // console.log(`==================================================================`);
+
+      /*==================================================================================
+      ?? Nullish coalescing operator 널 병합 연산자
+      요것도 아주 요긴하게 리액트(모던 자바스크립트)등 에서 아주 요긴하게 사용
+      */
+      // 쉽게 설명해 A || B 라는 조건에서 A값이 null 또는 undefined일 때 B 값이 나온다.
+      // 요것도 보통 초기값 설정할 때 많이 사용.
+      // console.log(`?? 연산자 예 1 : ${10 ?? "왜 이 문자가 나왔는지??"}`);
+      // console.log(`?? 연산자 예 2 : ${0 ?? "왜 이 문자가 나왔는지??"}`);
+      // console.log(`?? 연산자 예 2 : ${null ?? "왜 이 문자가 나왔는지??"}`);
+      // console.log(`?? 연산자 예 2 : ${"" ?? "왜 이 문자가 나왔는지??"}`);
+      // console.log(`?? 연산자 예 2 : ${undefined ?? "왜 이 문자가 나왔는지??"}`);
+      // console.log(`?? 연산자 예 2 : ${"Nullish" ?? "왜 이 문자가 나왔는지??"}`);
+      // console.log(`==================================================================`);
+
+      /*
+      || 와 && 는 ?? 과 같이 사용못한다.
+      A || B ?? C 이렇게 쓰면 오류가 발생.
+      (A || B) ?? C 우선 순위 명시적으로 나타내기 위해 괄호를 사용하면 가능
+
+      여기서 다루지 않은 연산자 중 Optional chaining 연산자(?.) 가 있다. 이것도 추후에 학습 예정.
+      */
+
+      /*==================================================================================
+        optional chaining (옵셔널 체이닝)
+        null, undefined의 속성을 조회할 때 오류를 방지
+        ?.은 ?.'앞’의 평가 대상이 undefined나 null이면 평가를 멈추고 undefined를 반환
+      ==================================================================================*/
+
+      const user = {}; // 주소 정보가 없는 사용자
+      // console.log(user.address.street); // 오류가 난다.
+
+      // querySelector(...) 호출 결과가 null인 경우 에러 발생
+      // const html = document.querySelector(".my-element").innerHTML; // 오류 발생
+
+      // console.log(user && user.address && user.address.street); // undefined 오류 나진 않음
+      // console.log(user?.address?.street); // undefine
+
+      const user2 = {
+        address: {
+          street: "주소2",
+        },
+      };
+      // 코드가 간결해지고 명확해진다.
+      // 객체나 배열에 데이터를 담아 보여줄때 null, undefined 값이 있을 경우가 있다.
+      // 그럴때 옵셔널 체이닝 사용하면 오류를 줄여주고 코드도 간결해진다.
+      // 아래 두개의 코드 결과는 같다.
+      // console.log(user2?.address?.street); // 주소2
+      // console.log(user2 && user2.address && user2.address.street); // 주소2
+    </script>
+  </body>
+</html>

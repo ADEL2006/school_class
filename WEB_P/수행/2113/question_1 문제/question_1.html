@@ -1,0 +1,90 @@
+﻿<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>회원 가입</title>
+  <link rel="stylesheet" href="question_1.css">
+</head>
+
+<body>
+  <form id="signup">
+    <fieldset>
+      <legend>로그인 정보</legend>
+      <ul>
+        <li>
+          <label for="userid">아이디</label>
+          <input id="userid" name="userid" type="text" required autofocus>
+        </li>
+        <li>
+          <label for="pwd1">비밀번호</label>
+          <input id="pwd1" name="pwd1" type="password" required>
+        </li>
+        <li>
+          <label for="pwd2">비밀번호 확인</label>
+          <input id="pwd2" name="pwd2" type="password" required>
+        </li>
+        <li>
+          <label>회원 등급</label>
+          <input type="radio" name="level" id="basic" value="준회원" checked><label for="basic">&nbsp;준회원</label>
+        </li>
+        <li>
+          <label>&nbsp;&nbsp;&nbsp;</label>
+          <input type="radio" name="level" id="premium" value="정회원"><label for="premium">&nbsp;정회원</label>
+          </label>
+        </li>
+      </ul>
+    </fieldset>
+    <fieldset>
+      <legend>개인 정보</legend>
+      <ul>
+        <li>
+          <label for="fullname">이름</label>
+          <input id="fullname" name="fullname" type="text" placeholder="5자미만 공백없이" required>
+        </li>
+        <li>
+          <label for="email">메일 주소</label>
+          <input id="email" name="email" type="email" placeholder="abcd@domain.com" required autocomplete="off">
+        </li>
+        <li>
+          <label for="tel">연락처</label>
+          <input id="tel" name="tel" type="tel" autocomplete="off">
+        </li>
+      </ul>
+    </fieldset>
+    <fieldset>
+      <button type="submit" id="submit"> 제출 </button>
+    </fieldset>
+  </form>
+  <script>
+    var submitButton = document.getElementById("submit");
+    submitButton.addEventListener("click", function(event) {
+      event.preventDefault();
+      
+      var userId = document.getElementById("userid").value;
+      var userLevel = document.querySelector('input[name="level"]:checked').value;
+      var fullName = document.getElementById("fullname").value;
+      var email = document.getElementById("email").value;
+      
+      var message = "입력 받은 값" + "\n";
+      message += "================================" + "\n"
+      message += "아이디: " + userId + "\n";
+      message += "회원 등급: " + userLevel + "\n";
+      message += "이름: " + fullName + "\n";
+      message += "메일 주소: " + email + "\n";
+      message += "================================" + "\n"
+      
+      alert(message);
+    });
+    /*
+    문제 1) 제출 버튼 클릭 시 실행 영상처럼 alert 창이 나타나도록 JavaScript 코드를 작성하세요.
+           주의! HTML은 절대 수정할 수 없습니다.
+
+    조건1) 제출 button에 addEventListener를 사용해 click 이벤트를 연결하세요.
+    조건2) alert 창에 나타낼 값은 아이디, 회원 등급, 이름, 메일 주소 입니다.
+    조건3) 실행 영상처럼 alert 창을 닫은 뒤 폼에 입력한 내용은 사라지지 않고 유지되어야 합니다.
+    */
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="module">
+      /* 1. 가장 기본적인 import 방법
+       module.js 파일에 들어있는 모든 함수, 객체 등을 사용할 수 있다.
+       당연히 testImport_1, testImport_2 함수 모두다 사용 가능.
+       */
+      //   import * as myModules from "./1.module.js";
+      //   myModules.testImport_1();
+      //   myModules.testImport_2();
+
+      // 2. 특정 함수, 객체 등만 import 방법
+      // { import할 함수 등 } 이렇게 특정 함수, 객체 등 필요한 부분만 가져올 수 있다.
+      //   import { testImport_1 } from "./1.module.js";
+      //   testImport_1();
+
+      // 3. 특정 함수, 객체 등만 import 방법
+      // 2와 같지만 이름을 원하는걸로 바꿀때
+      // import { testImport_1 as myFun } from "./1.module.js";
+      // myFun();
+
+      // 4. 특정 함수, 객체 등만 import 할때 원하는 이름으로 변경하기
+      // 2번 방식과 같지만 이름을 내가 원하는걸로 바꿀 수 있다.
+      //   import { testImport_1 as myFun } from "./1.module.js";
+      //   myFun();
+
+      // 5. 특정 함수, 객체 등만 import 할때 여러개를 import 할때
+      // 2번 방식과 같지만 여러개를 import 한다
+      // import { testImport_1, testImport_2 } from "./1.module.js";
+      // testImport_1();
+      // testImport_2();
+    </script>
+  </body>
+</html>
