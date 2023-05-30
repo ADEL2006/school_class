@@ -7,18 +7,19 @@
     <link rel="stylesheet" href="question_2.css" />
   </head>
   <body>
-    <button id="change" onclick="change()">내용 바꾸기</button>
+    <button id="change">내용 바꾸기</button>
     <p id="p_1">첫번째 문단입니다.</p>
     <p id="p_2">두번째 문단입니다.</p>
 
     <script>
+      const changeButton = getElementById("change");
 
       var p1 = document.getElementById("p_1");
       var p2 = document.getElementById("p_2");
       var temp;
       var cnt = 0;
 
-      var change = () => {
+      changeButton.addEventListener = ("click", () =>{
         if (cnt % 2 == 0) {
           temp = p1.innerHTML;
           p1.innerHTML = p2.innerHTML;
@@ -33,7 +34,7 @@
           p2.style.color = "black";
         }
         cnt++;
-      };
+        });
       /*
       문제 1) 내용 바꾸기 버튼 클릭 시 실행 영상처럼 p tag의 내용이 서로 바뀌도록 코드를 작성하세요.
             주의! HTML은 절대 수정할 수 없습니다.
