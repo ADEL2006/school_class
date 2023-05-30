@@ -12,14 +12,14 @@
     <p id="p_2">두번째 문단입니다.</p>
 
     <script>
-      const changeButton = getElementById("change");
+      var changeButton = document.getElementById("change");
 
       var p1 = document.getElementById("p_1");
       var p2 = document.getElementById("p_2");
       var temp;
       var cnt = 0;
 
-      changeButton.addEventListener = ("click", () =>{
+      changeButton.addEventListener("click", () => {
         if (cnt % 2 == 0) {
           temp = p1.innerHTML;
           p1.innerHTML = p2.innerHTML;
