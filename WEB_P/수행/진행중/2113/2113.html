@@ -1,60 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+    <style>
+        p {
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+    </style>
     <h2>거래처 등록</h2>
     <h3>*항목은 필수 입력 입니다.</h3>
-    <table border="1">
-        <tr>
-            <th>*</th>
-            <th>상호</th>
-            <th><input name="mutual"></th>
-        </tr>
-        <tr>
-            <th>*</th>
-            <th>사업자등록번호</th>
-            <th><input name="number"></th>
-        </tr>
-        <tr>
-            <th>*</th>
-            <th>대표전화</th>
-            <th><input name="tel"></th>
-        </tr>
-        <tr>
-            <th>*</th>
-            <th>거래처ID</th>
-            <th><input name="ID"></th>
-        </tr>
-        <tr>
-            <th>*</th>
-            <th>비밀번호</th>
-            <th><input type ="password" name="password"></th>
-        </tr>
-        <tr>
-            <th>*</th>
-            <th>비밀번호 확인</th>
-            <th><input type="password" name="password_check"></th>
-        </tr>
-        <tr>
-            <th>*</th>
-            <th>분류</th>
-            <th>
-                <select name="classification" id="classification">
-                    <option value="">==분류를 선택해주세요==</option>
-                    <option value="1">대기업</option>
-                    <option value="2">중소기업</option>
-                    <option value="3">소공상인</option>
-                </select>
-            </th>
-        </tr>
-        <tr>
+    <form action="" id="form">
+        <table border="1">
+            <tr>
+                <th>*</th>
+                <th>
+                    <p>상호</p>
+                </th>
+                <th><input name="mutual" id="mutual"></th>
+            </tr>
+            <tr>
+                <th>*</th>
+                <th>
+                    <p>사업자등록번호</p>
+                </th>
+                <th><input name="number" id="number"></th>
+            </tr>
+            <tr>
+                <th>*</th>
+                <th>
+                    <p>대표전화</p>
+                </th>
+                <th><input name="tel" id="tel"></th>
+            </tr>
+            <tr>
+                <th>*</th>
+                <th>
+                    <p>거래처ID</p>
+                </th>
+                <th><input name="ID" id="ID"></th>
+            </tr>
+            <tr>
+                <th>*</th>
+                <th>
+                    <p>비밀번호</p>
+                </th>
+                <th><input type="password" name="password" id="pw"></th>
+            </tr>
+            <tr>
+                <th>*</th>
+                <th>
+                    <p>비밀번호 확인</p>
+                </th>
+                <th><input type="password" name="password_check" id="pwc"></th>
+            </tr>
+            <tr>
+                <th>*</th>
+                <th>
+                    <p>분류</p>
+                </th>
+                <th>
+                    <select name="classification" id="classification">
+                        <option value="">==분류를 선택해주세요==</option>
+                        <option value="1">대기업</option>
+                        <option value="2">중소기업</option>
+                        <option value="3">소공상인</option>
+                    </select>
+                </th>
+            </tr>
+            <tr>
+                <th colspan="3">
+                    <input type="submit" id="submit" value="등록하기">
+                    <input type="reset" value="다시쓰기">
+                </th>
+            </tr>
+        </table>
+    </form>
+    <script>
+        var registrationButton = document.getElementById("submit");
+        registrationButton.addEventListener("click", function (event) {
+            var form = document.getElementById("form");
 
-        </tr>
-    </table>
+            event.preventDefault();
+            var mutual = document.getElementById("mutual");
+            var number = document.getElementById("number");
+            var tel = document.getElementById("tel");
+            var id = document.getElementById("ID");
+            var pw = document.getElementById("pw");
+            var pwc = document.getElementById("pwc");
+            var cf = document.getElementById("classification");
+            if (mutual.value === "") {
+                alert("상호를 다시 입력해주세요.")
+                mutual.focus();
+            } else if (number.value === "") {
+                alert("사업자등록번호를 다시 입력해주세요.")
+                number.focus();
+            } else if (tel.value === "") {
+                alert("대표전화를 다시 입력해주세요.")
+                tel.focus();
+            } else if (id.value === "") {
+                alert("거래처ID를 다시 입력해주세요.")
+                id.focus();
+            } else if (!isNaN(id.value.charAt(0))) {
+                alert("ID의 첫 글자는 숫자가 아니어야 합니다.")
+                id.focus();
+            } else if (pw.value === "") {
+                alert("비밀번호를 다시 입력해주세요.")
+                pw.focus();
+            } else if (pwc.value === "") {
+                alert("비밀번호확인를 다시 입력해주세요.")
+                pwc.focus();
+            } else if (pwc.value !== pw.value) {
+                alert("비밀번호와 비밀번호 확인은 같아야 합니다.", pw.value, pwc.value);
+                pwc.focus();
+            } else if (cf.value === "") {
+                alert("분류를 다시 입력해주세요.")
+                cf.focus();
+            } else {
+                alert("등록 성공!");
+                form.reset();
+            }
+        });
+    </script>
 </body>
+
 </html>
