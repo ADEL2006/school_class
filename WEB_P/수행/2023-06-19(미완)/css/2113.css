@@ -161,20 +161,28 @@ header {
 
 .school {
     margin-top: 20%;
-    margin-left: 20%;
+    margin-left: 30%;
     margin-bottom: 5%;
     animation: biger 1s;
     width: 40%;
     animation: fadeInLeft 1s;
-    float:center;
 }
 
-.school-introduce {
+.school-introduce1 {
     color: black;
     font-weight: bold;
     font-size: 120%;
-    float:center;
     margin-top: 10%;
+    margin-left: 27.5%;
+    animation: fadeInLeft 1s;
+}
+
+.school-introduce2 {
+    color: black;
+    font-weight: bold;
+    font-size: 120%;
+    margin-top: 10%;
+    margin-left: 18%;
     animation: fadeInLeft 1s;
 }
 
