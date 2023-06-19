@@ -199,15 +199,16 @@ header {
 .ban-bold {
     font-weight: bold;
     font-size: 190%;
-    margin: 10% 10% 0 10%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .ban-img {
-    margin-left: auto;
-    margin-right: 10px;
+    margin-top: 2%;
+    margin-left: 2%;
     width: 50px;
     height: 50px;
-    border-radius: 50%;
+    border-radius: 10%;
     object-fit: cover;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
@@ -284,7 +285,6 @@ input:not([type="submit"]):not([type="reset"]):not([type="button"]) {
 }
 
 footer {
-    /* margin-top: 10%; */
     background-color: #4f4f4f;
     height: 100px;
     color: white;
